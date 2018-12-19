@@ -96,111 +96,93 @@ html,
 /* northern group */
 
 #northerngrouploop {
-    position: absolute;
-    top: 600px;
-    left: 610px;
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    border: 9px solid;
     width: 200px;
     height: 160px;
+    transform: translate(525px, 550px);
+    border: 9px solid;
     border-radius: 0px 20px 20px 20px;
     text-align: center;
-    padding-top: 30px;
 }
 #northerngrouploop::before {
     content: "";
-    position: absolute;
-    background-color: white;
-    transform: translate(-91px, -39px);
+    display: block;
     width: 9px;
     height: 9px;
+    transform: translateY(-9px);
+    background-color: white;
 }
 #northerngrouploop::after {
     content: "";
-    position: absolute;
-    transform: translate(-100px, -50px);
-    border: 9px solid;
+    display: block;
     width: 20px;
     height: 20px;
+    transform: translate(-9px, -29px);
+    border: 9px solid;
     border-top-width: 0px;
     border-right-width: 0px;
     border-bottom-left-radius: 20px;
 }
 
 #flagstaff {
-    top: -9px;
     left: calc(25% - 9px);
+    transform: translateY(-18px);
 }
 #flagstaff .label {
-    top: -19px;
-    left: -20px;  
+    transform: translate(-20px, -19px);
 }
 #melbournecentral {
-    top: -9px;
-    left : calc(75% - 9px);
+    left: calc(70% - 9px);
+    transform: translateY(-18px);
 }
 #melbournecentral .label {
-    top: -29px;
-    left: -49px;
-    width: 105px;
+    width: 100px;
+    transform: translate(-46px, -28px);
     text-align: center;
 }
 #flindersstreet {
-    top: 153.9px;
     left : calc(50% - 19.2px);
-    transform:  rotate(-90deg);
-    font-weight: 700;
-    
+    transform: translateY(147.26px) rotate(-90deg);    
 }
 #flindersstreet .label {
-    left: -109px;
-    top: 55px;
-    transform: rotate(90deg);
-    
-    
+    transform: translate(-109px, 58px) rotate(90deg);    
 }
 #southerncross {
-    left: -45.75px;
     top: calc(calc(100% / 2) - 9px);
+    transform: translateX(-44.51px);
 }
 
 #suburbanline {
     position: absolute;
-    bottom: -37.5px;
-    left: -39.5px;
-    border: 9px solid;
     width: 20px;
     height: 297.5px;
+    transform: translate(-38.01px, -125.24px);
+    border: 9px solid;
     border-right-width: 0px;
     border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    
+    border-bottom-left-radius: 20px;   
 }
 #suburbanline::before {
     content: "";
-    position: absolute;
-    top: 279.5px;
-    left: 10.5px;
+    display: block;
     width: 116px;
     height: 9px;
+    transform: translate(11px, 279.5px);
     background-color: currentColor;
 }
 #suburbanline::after {
     content: "";
-    position: absolute;
-    top: -20px;
-    left: 10.5px;
-    border: 9px solid;
+    display: block;
     width: 20px;
     height: 20px;
+    transform: translate(9px, -29px);
+    border: 9px solid;
     border-top-width: 0px;
     border-left-width: 0px;
     border-bottom-right-radius: 20px;
 }
 
 #northmelbourne {
-    left : -36.75px;
+    left : -35.51px;
     bottom: 20px;
 }
 
@@ -208,7 +190,7 @@ html,
     position: absolute;
     width: 9px;
     height: 484px;
-    transform: translate(-9px, -522px);
+    transform: translate(-9px, -502px);
     background-color: currentColor;
 }
 #northerngroupline > .station:not(#northmelbourne) {
@@ -217,64 +199,54 @@ html,
 }
 #northerngroupline > .station:not(#northmelbourne):not(#craigieburnstation) > .label {
     text-align: right;
-    -webkit-transform: translate(-210px);
     transform: translate(-210px);
 }
 #craigieburnstation > .label {
-    -webkit-transform: translate(19px);
     transform: translate(16px);
 }
 
 #sunburyline {
     position: absolute;
-    bottom: 68px;
-    right: 39.5px;
-    background-color: currentColor;
     width: 300px;
     height: 9px;
+    transform: translate(-329px, 407px);
+    background-color: currentColor;
 }
-#sunburyline::before {
+#sunburyline::after {
     content: "";
-    position: absolute;
-    right: -39.7px;
-    bottom: -11px;
-    border: 9px solid;
-    width: 30.75px;
+    display: block;
+    width: 29.5px;
     height: 20px;
+    transform: translateX(308.5px);    
+    border: 9px solid;
     border-bottom-width: 0px;
     border-left-width: 0px;
     border-top-right-radius: 20px;
 }
 #sunburyline > .station:not(.smallpremium) {
-    right: calc(66% + calc(9% * calc(var(--stationposition) - 2.25)));
+    right: calc(66% + calc(9% * calc(var(--stationposition) - 2.15)));
 }
 #sunburyline > .station:not(#sunshine) {
-    -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
 }
 #sunburyline > .station:not(#sunshine) > .label {
     text-align: right;
-    transform: scale(-1);
-    top: 1px;
-    left: 19px;
+    transform: translate(18.75px, 3px) scale(-1);
 }
 
 #footscray {
     right: 50%;
 }
 #sunshine > .label {
-    right: 25px;
-    top:14px;
+    transform: translate(-23px, 16.75px);  
 }
 
 #sunburyline2 {
     position: absolute;
-    right: 263.5px;
-    bottom: 78.25px;
-    transform: rotate(45deg);
-    background-color: currentColor;
     width: 225px;
     height: 9px;
+    transform: translate(-188.5px, -78.5px) rotate(45deg);
+    background-color: currentColor;
     z-index: -1;
 }
 #sunburyline2 > .station {
@@ -283,7 +255,6 @@ html,
 }
 #sunburyline2 > .station > .label {
     text-align: left;
-    -webkit-transform: translate(19px);
     transform: translate(19px);
 }
 #sunburyline2 > .premium {
@@ -293,46 +264,41 @@ html,
 
 #upfieldline {
     position: absolute;
-    left: 20px;
-    bottom: 88px;
-    border: 9px solid;
     width: 80px;
     height: 299px;
+    transform: translate(20px, 95px);
+    border: 9px solid;
     border-top-width: 0px;
     border-left-width: 0px;
     border-bottom-right-radius: 20px;
 }
 #upfieldline::before {
     content: "";
-    position: absolute;
-    left: -20.15px;
-    bottom: -20px;
-    border: 9px solid;
+    display: block;
     width: 20.75px;
     height: 20px;
+    transform: translate(-20px, 290px);
+    border: 9px solid;
     border-bottom-width: 0px;
     border-right-width: 0px;
     border-top-left-radius: 20px;
 }
 #upfieldline > .station {
-    right: -9px;
     bottom: calc(-12px + calc(26.65px * var(--stationposition)));
-    
+    transform: translateX(71px);  
 }
 #upfieldline .station .label {
     text-align: left;
-    -webkit-transform: translate(19px);
     transform: translate(19px);
 }
 
 #upfieldline2 {
    position: absolute;
-   right: 16px;
-   top: -60.5px;
-   transform: rotate(-45deg);
-   background-color: currentColor;
    width: 9px;
    height:75px;
+   transform: translate(46px, -80.5px) rotate(-45deg);
+   background-color: currentColor;
+
 }
 #upfieldline2 > .station {
     transform: rotate(45deg);   
