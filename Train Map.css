@@ -1,0 +1,340 @@
+*,
+*::before,
+*::after {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body,
+html,
+#map-wrapper {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+.label {
+    font-size: 12px;
+    line-height: 1;
+    text-align: left;
+    color: black;
+}
+.station-label {
+	float: left;
+	width: 200px;
+    position: relative;
+    top: -2.5px;
+}
+
+.station {
+	position: absolute;
+	width: 9px;
+	height: 9px;
+	background: white;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+    --premium: 0;
+
+}
+.station.smallpremium {
+    box-shadow: 0 0 0 0.75pt #383838, 0 0 0 2pt #828486, 0 0 0 2.75pt #383838;
+    font-weight: 700;
+}
+.station.premium {
+    width: 13px;
+    height: 13px;
+    left: -2px;
+    box-shadow: 0 0 0 0.75pt #383838, 0 0 0 2.5pt #828486, 0 0 0 3.25pt #383838;
+    font-weight: 700;
+}
+.station.premium .label {
+    top: 0px;
+    right: -2px;
+}
+.station.largepremium {
+    width: 17px;
+    height: 17px;
+    left: -4px;
+    box-shadow: 0 0 0 0.75pt #383838, 0 0 0 3pt #828486, 0 0 0 3.75pt #383838;
+    font-weight: 700;
+}
+.station.largepremium .label {
+    top: 2px;
+    right: -13px;
+}
+.station.mutli {
+    width: 51.25px;
+    height: 12px;
+    border-top-left-radius: 100%50px;
+    border-top-right-radius: 100%50px;
+    border-bottom-left-radius: 100%50px;
+    border-bottom-right-radius: 100%50px;  
+    box-shadow: 0 0 0 1pt #383838;
+    font-weight: 700;
+}
+
+#northmelbourne .label,
+#southerncross .label {
+    top: -6.25px;
+    left: -90px;
+    width: 83px;
+    text-align: right;
+}
+
+/* lines */
+
+.suburbanline {
+    color: #6F83C4;
+}
+.northerngroup {
+    color: #3B51A3;
+}
+
+/* northern group */
+
+#northerngrouploop {
+    position: absolute;
+    top: 600px;
+    left: 610px;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    border: 9px solid;
+    width: 200px;
+    height: 160px;
+    border-radius: 0px 20px 20px 20px;
+    text-align: center;
+    padding-top: 30px;
+}
+#northerngrouploop::before {
+    content: "";
+    position: absolute;
+    background-color: white;
+    transform: translate(-91px, -39px);
+    width: 9px;
+    height: 9px;
+}
+#northerngrouploop::after {
+    content: "";
+    position: absolute;
+    transform: translate(-100px, -50px);
+    border: 9px solid;
+    width: 20px;
+    height: 20px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-left-radius: 20px;
+}
+
+#flagstaff {
+    top: -9px;
+    left: calc(25% - 9px);
+}
+#flagstaff .label {
+    top: -19px;
+    left: -20px;  
+}
+#melbournecentral {
+    top: -9px;
+    left : calc(75% - 9px);
+}
+#melbournecentral .label {
+    top: -29px;
+    left: -49px;
+    width: 105px;
+    text-align: center;
+}
+#flindersstreet {
+    top: 153.9px;
+    left : calc(50% - 19.2px);
+    transform:  rotate(-90deg);
+    font-weight: 700;
+    
+}
+#flindersstreet .label {
+    left: -109px;
+    top: 55px;
+    transform: rotate(90deg);
+    
+    
+}
+#southerncross {
+    left: -45.75px;
+    top: calc(calc(100% / 2) - 9px);
+}
+
+#suburbanline {
+    position: absolute;
+    bottom: -37.5px;
+    left: -39.5px;
+    border: 9px solid;
+    width: 20px;
+    height: 297.5px;
+    border-right-width: 0px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    
+}
+#suburbanline::before {
+    content: "";
+    position: absolute;
+    top: 279.5px;
+    left: 10.5px;
+    width: 116px;
+    height: 9px;
+    background-color: currentColor;
+}
+#suburbanline::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 10.5px;
+    border: 9px solid;
+    width: 20px;
+    height: 20px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-bottom-right-radius: 20px;
+}
+
+#northmelbourne {
+    left : -36.75px;
+    bottom: 20px;
+}
+
+#northerngroupline {
+    position: absolute;
+    width: 9px;
+    height: 484px;
+    transform: translate(-9px, -522px);
+    background-color: currentColor;
+}
+#northerngroupline > .station:not(#northmelbourne) {
+    bottom: calc(100px + calc(4px * var(--premium)) + calc(25px * var(--stationposition)));
+    
+}
+#northerngroupline > .station:not(#northmelbourne):not(#craigieburnstation) > .label {
+    text-align: right;
+    -webkit-transform: translate(-210px);
+    transform: translate(-210px);
+}
+#craigieburnstation > .label {
+    -webkit-transform: translate(19px);
+    transform: translate(16px);
+}
+
+#sunburyline {
+    position: absolute;
+    bottom: 68px;
+    right: 39.5px;
+    background-color: currentColor;
+    width: 300px;
+    height: 9px;
+}
+#sunburyline::before {
+    content: "";
+    position: absolute;
+    right: -39.7px;
+    bottom: -11px;
+    border: 9px solid;
+    width: 30.75px;
+    height: 20px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-top-right-radius: 20px;
+}
+#sunburyline > .station:not(.smallpremium) {
+    right: calc(66% + calc(9% * calc(var(--stationposition) - 2.25)));
+}
+#sunburyline > .station:not(#sunshine) {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+#sunburyline > .station:not(#sunshine) > .label {
+    text-align: right;
+    transform: scale(-1);
+    top: 1px;
+    left: 19px;
+}
+
+#footscray {
+    right: 50%;
+}
+#sunshine > .label {
+    right: 25px;
+    top:14px;
+}
+
+#sunburyline2 {
+    position: absolute;
+    right: 263.5px;
+    bottom: 78.25px;
+    transform: rotate(45deg);
+    background-color: currentColor;
+    width: 225px;
+    height: 9px;
+    z-index: -1;
+}
+#sunburyline2 > .station {
+    transform: rotate(-45deg);   
+    right: calc(-110px + calc(4px * var(--premium)) + calc(27.5px * var(--stationposition)));
+}
+#sunburyline2 > .station > .label {
+    text-align: left;
+    -webkit-transform: translate(19px);
+    transform: translate(19px);
+}
+#sunburyline2 > .premium {
+    left: unset;
+    top: -2px;
+}
+
+#upfieldline {
+    position: absolute;
+    left: 20px;
+    bottom: 88px;
+    border: 9px solid;
+    width: 80px;
+    height: 299px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-bottom-right-radius: 20px;
+}
+#upfieldline::before {
+    content: "";
+    position: absolute;
+    left: -20.15px;
+    bottom: -20px;
+    border: 9px solid;
+    width: 20.75px;
+    height: 20px;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-left-radius: 20px;
+}
+#upfieldline > .station {
+    right: -9px;
+    bottom: calc(-12px + calc(26.65px * var(--stationposition)));
+    
+}
+#upfieldline .station .label {
+    text-align: left;
+    -webkit-transform: translate(19px);
+    transform: translate(19px);
+}
+
+#upfieldline2 {
+   position: absolute;
+   right: 16px;
+   top: -60.5px;
+   transform: rotate(-45deg);
+   background-color: currentColor;
+   width: 9px;
+   height:75px;
+}
+#upfieldline2 > .station {
+    transform: rotate(45deg);   
+    bottom: calc(calc(35% * calc(var(--stationposition) - 10)) - 12.5px);
+}
