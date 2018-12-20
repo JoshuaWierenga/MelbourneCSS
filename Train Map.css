@@ -294,3 +294,14 @@ html,
     transform: rotate(45deg);   
     bottom: calc(calc(35% * calc(var(--stationposition) - 10)) - 12.5px);
 }
+
+/* loop line */
+#loopline {
+    position: absolute;
+    width: 200px;
+    height: 151px;
+    transform: translate(514px, 561px);
+    border: 9px solid red;
+    border-radius: 20px 20px 0px 0px;
+    border-bottom-width: 0px;
+}
