@@ -61,14 +61,26 @@ html,
     top: 2px;
     right: -13px;
 }
+
 .station.mutli {
-    width: 51.25px;
+    width: calc(13.2px + calc(11px * var(--stationlines)));
     height: 12px;
-    border-top-left-radius: 100%50px;
-    border-top-right-radius: 100%50px;
-    border-bottom-left-radius: 100%50px;
-    border-bottom-right-radius: 100%50px;  
+    border-top-left-radius: 100% calc(13.2px + calc(11px * var(--stationlines)));
+    border-top-right-radius: 100% calc(13.2px + calc(11px * var(--stationlines)));
+    border-bottom-left-radius: 100% calc(13.2px + calc(11px * var(--stationlines)));
+    border-bottom-right-radius: 100% calc(13.2px + calc(11px * var(--stationlines)));  
     box-shadow: 0 0 0 1pt #383838;
+    font-weight: 700;
+}
+
+.station.multi.vertical {
+    width: 12px;
+    height: calc(13.2px + calc(11px * var(--stationlines)));
+    border-top-left-radius: 100% 12px;
+    border-top-right-radius: 100% 12px;
+    border-bottom-left-radius: 100% 12px;
+    border-bottom-right-radius: 100% 12px;
+    box-shadow: 0 0 0 1px #383838;
     font-weight: 700;
 }
 
@@ -119,15 +131,17 @@ html,
 }
 
 #flagstaff {
+    --stationlines: 2;
     left: calc(25% - 9px);
-    transform: translateY(-18px);
+    transform: translateY(-24.6px);
 }
 #flagstaff .label {
     transform: translate(-20px, -19px);
 }
 #melbournecentral {
-    left: calc(70% - 9px);
-    transform: translateY(-18px);
+    --stationlines: 2;
+    left: calc(75% - 9px);
+    transform: translateY(-24.6px);
 }
 #melbournecentral .label {
     width: 100px;
@@ -135,22 +149,25 @@ html,
     text-align: center;
 }
 #flindersstreet {
-    left : calc(50% - 19.2px);
-    transform: translateY(147.26px) rotate(-90deg);    
+    --stationlines: 4;
+    left : calc(50% - 9px);
+    transform: translateY(126.4px);    
 }
 #flindersstreet .label {
-    transform: translate(-109px, 58px) rotate(90deg);    
+    transform: translate(-37.5px, 58px);    
 }
 #southerncross {
-    top: calc(calc(100% / 2) - 9px);
+    --stationlines: 4;
+    top: calc(50% - 9px);
+    left: -6.1px;
     transform: translateX(-44.51px);
 }
 
 #suburbanline {
     position: absolute;
-    width: 20px;
-    height: 297.5px;
-    transform: translate(-38.01px, -125.24px);
+    width: 24px;
+    height: 301.5px;
+    transform: translate(-44px, -125.25px);
     border: 9px solid;
     border-right-width: 0px;
     border-radius: 20px 0px 0px 20px;
@@ -158,9 +175,9 @@ html,
 #suburbanline::before {
     content: "";
     display: block;
-    width: 116px;
+    width: 106.5px;
     height: 9px;
-    transform: translate(11px, 279.5px);
+    transform: translate(15px, 283.9px);
     background-color: currentColor;
 }
 #suburbanline::after {
@@ -168,14 +185,15 @@ html,
     display: block;
     width: 20px;
     height: 20px;
-    transform: translate(9px, -29px);
+    transform: translate(15px, -29px);
     border-style: solid;
     border-width: 0px 9px 9px 0px; 
     border-bottom-right-radius: 20px;
 }
 
 #northmelbourne {
-    left : -35.51px;
+    --stationlines: 4;
+    left : -41.6px;
     bottom: 20px;
 }
 
@@ -202,15 +220,15 @@ html,
     position: absolute;
     width: 300px;
     height: 9px;
-    transform: translate(-329px, 407px);
+    transform: translate(-335px, 407px);
     background-color: currentColor;
 }
 #sunburyline::after {
     content: "";
     display: block;
-    width: 29.5px;
+    width: 35px;
     height: 20px;
-    transform: translateX(308.5px);    
+    transform: translateX(309px);    
     border-style: solid;
     border-width: 9px 9px 0px 0px;
     border-top-right-radius: 20px;
