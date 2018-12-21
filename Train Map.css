@@ -1,7 +1,6 @@
 *,
 *::before,
 *::after {
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -63,24 +62,24 @@ html,
 }
 
 .station.mutli {
-    width: calc(13.2px + calc(11px * var(--stationlines)));
+    width: calc(14px + 9px * var(--stationlines) + 2px * calc(var(--stationlines) - 1));
     height: 12px;
-    border-top-left-radius: 100% calc(13.2px + calc(11px * var(--stationlines)));
-    border-top-right-radius: 100% calc(13.2px + calc(11px * var(--stationlines)));
-    border-bottom-left-radius: 100% calc(13.2px + calc(11px * var(--stationlines)));
-    border-bottom-right-radius: 100% calc(13.2px + calc(11px * var(--stationlines)));  
+    border-top-left-radius: calc(14px + 9px * var(--stationlines) + 2px * calc(var(--stationlines) - 1));
+    border-top-right-radius: calc(14px + 9px * var(--stationlines) + 2px * calc(var(--stationlines) - 1));
+    border-bottom-left-radius: calc(14px + 9px * var(--stationlines) + 2px * calc(var(--stationlines) - 1));
+    border-bottom-right-radius: calc(14px + 9px * var(--stationlines) + 2px * calc(var(--stationlines) - 1));
     box-shadow: 0 0 0 1pt #383838;
     font-weight: 700;
 }
 
 .station.multi.vertical {
     width: 12px;
-    height: calc(13.2px + calc(11px * var(--stationlines)));
-    border-top-left-radius: 100% 12px;
-    border-top-right-radius: 100% 12px;
-    border-bottom-left-radius: 100% 12px;
-    border-bottom-right-radius: 100% 12px;
-    box-shadow: 0 0 0 1px #383838;
+    height: calc(14px + 9px * var(--stationlines) + 2px * calc(var(--stationlines) - 1));
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    box-shadow: 0 0 0 1pt #383838;
     font-weight: 700;
 }
 
@@ -133,7 +132,7 @@ html,
 #flagstaff {
     --stationlines: 2;
     left: calc(25% - 9px);
-    transform: translateY(-24.6px);
+    transform: translateY(-25px);
 }
 #flagstaff .label {
     transform: translate(-20px, -19px);
@@ -141,7 +140,7 @@ html,
 #melbournecentral {
     --stationlines: 2;
     left: calc(75% - 9px);
-    transform: translateY(-24.6px);
+    transform: translateY(-25px);
 }
 #melbournecentral .label {
     width: 100px;
@@ -151,7 +150,7 @@ html,
 #flindersstreet {
     --stationlines: 4;
     left : calc(50% - 9px);
-    transform: translateY(126.4px);    
+    transform: translateY(126px);    
 }
 #flindersstreet .label {
     transform: translate(-37.5px, 58px);    
@@ -159,15 +158,14 @@ html,
 #southerncross {
     --stationlines: 4;
     top: calc(50% - 9px);
-    left: -6.1px;
-    transform: translateX(-44.51px);
+    transform: translateX(-49px);
 }
 
 #suburbanline {
     position: absolute;
     width: 24px;
-    height: 301.5px;
-    transform: translate(-44px, -125.25px);
+    height: 300px;
+    transform: translate(-42px, -125.25px);
     border: 9px solid;
     border-right-width: 0px;
     border-radius: 20px 0px 0px 20px;
@@ -177,7 +175,7 @@ html,
     display: block;
     width: 106.5px;
     height: 9px;
-    transform: translate(15px, 283.9px);
+    transform: translate(15px, 282px);
     background-color: currentColor;
 }
 #suburbanline::after {
@@ -193,7 +191,7 @@ html,
 
 #northmelbourne {
     --stationlines: 4;
-    left : -41.6px;
+    left : -40px;
     bottom: 20px;
 }
 
@@ -220,13 +218,13 @@ html,
     position: absolute;
     width: 300px;
     height: 9px;
-    transform: translate(-335px, 407px);
+    transform: translate(-333px, 407px);
     background-color: currentColor;
 }
 #sunburyline::after {
     content: "";
     display: block;
-    width: 35px;
+    width: 33px;
     height: 20px;
     transform: translateX(309px);    
     border-style: solid;
@@ -314,12 +312,13 @@ html,
 }
 
 /* loop line */
+
 #loopline {
     position: absolute;
     width: 200px;
     height: 151px;
     transform: translate(514px, 561px);
-    border: 9px solid red;
+    border: 9px solid #CE4846;
     border-radius: 20px 20px 0px 0px;
     border-bottom-width: 0px;
 }
