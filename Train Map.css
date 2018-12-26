@@ -99,6 +99,9 @@ html,
 .northerngroup {
     color: #3B51A3;
 }
+.crosscityline {
+    color: #562166;
+}
 
 /* northern group */
 
@@ -156,12 +159,12 @@ html,
     transform: translate(40px, 0px); 
 }
 #flindersstreet {
-    --stationlines: 4;
+    --stationlines: 5;
     left : calc(50% - 9px);
     transform: translateY(126px);    
 }
 #flindersstreet .label {
-    transform: translate(-37.5px, 58px);    
+    transform: translate(-37.5px, 69px);    
 }
 #southerncross {
     --stationlines: 4;
@@ -329,4 +332,48 @@ html,
     border: 9px solid #CE4846;
     border-radius: 20px 20px 0px 0px;
     border-bottom-width: 0px;
+}
+
+/* cross city line */
+
+#crosscitylineloop {
+    position: absolute;
+    width: 250px;
+    height: 214px;
+    transform: translate(503px, 518px);
+    border-style: solid;
+    border-bottom-left-radius: 20px;
+    border-width: 0px 0px 9px 9px;
+}
+
+#crosscitylineloop::before {
+    content: "";
+    display: block;
+    width: 20.75px;
+    height: 20px;
+    transform: translate(2px, 194px);
+    border-style: solid;
+    border-width: 0px 0px 9px 9px;
+    border-bottom-left-radius: 20px;
+}
+
+#crosscitylineloop::after {
+    content: "";
+    display: block;
+    width: 20.75px;
+    height: 20px;
+    transform: translate(193px, 174px);
+    border-style: solid;
+    border-width: 0px 0px 9px 9px;
+    border-bottom-left-radius: 20px;
+}
+
+#crosscityflinders {
+    position: absolute;
+    width: 60px;
+    height: 22px;
+    transform: translate(116px, 194px);
+    border-style: solid;
+    border-width: 0px 9px 9px 0px;
+    border-bottom-right-radius: 20px;
 }
