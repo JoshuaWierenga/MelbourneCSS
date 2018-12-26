@@ -61,7 +61,7 @@ html,
     right: -13px;
 }
 
-.station.mutli {
+.station.multi {
     width: calc(14px + 9px * var(--stationlines) + 2px * calc(var(--stationlines) - 1));
     height: 12px;
     border-top-left-radius: calc(14px + 9px * var(--stationlines) + 2px * calc(var(--stationlines) - 1));
@@ -147,6 +147,14 @@ html,
     transform: translate(-46px, -28px);
     text-align: center;
 }
+#parliament {
+    --stationlines: 2;
+    top: calc(50% - 9px);
+    transform: translateX(164px);
+}
+#parliament .label {
+    transform: translate(40px, 0px); 
+}
 #flindersstreet {
     --stationlines: 4;
     left : calc(50% - 9px);
@@ -183,7 +191,7 @@ html,
     display: block;
     width: 20px;
     height: 20px;
-    transform: translate(15px, -29px);
+    transform: translate(13px, -29px);
     border-style: solid;
     border-width: 0px 9px 9px 0px; 
     border-bottom-right-radius: 20px;
